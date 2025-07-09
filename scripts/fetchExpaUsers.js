@@ -146,7 +146,6 @@ async function fetchAllEPs() {
   
 
 }
-fetchAllEPs();
 
 module.exports = {
   fetchAllEPs
