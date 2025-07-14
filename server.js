@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/contacts", require("./routes/contactRoutes"));
 //app.use("/api/ep", require("./routes/epRoutes"));
 //app.use("/api/amdin", require("./routes/adminRoutes"));
 

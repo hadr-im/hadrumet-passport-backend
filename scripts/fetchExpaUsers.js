@@ -5,7 +5,7 @@ const path = require('path');
 
 const USERS_FILE = path.join(__dirname, '../data/users.json');
 const EXPA_ACCESS_TOKEN = process.env.EXPA_API_KEY;
-const GRAPHQL_ENDPOINT = process.env.EXPA_API_URL || 'https://gis-api.aiesec.org/graphql'; // corrigé vers le vrai endpoint
+const GRAPHQL_ENDPOINT = process.env.EXPA_API_URL || 'https://gis-api.aiesec.org/graphql';
 
 function generatePassword(full_name, applicationId) {
   const nameParts = full_name.trim().toLowerCase().split(' ');
