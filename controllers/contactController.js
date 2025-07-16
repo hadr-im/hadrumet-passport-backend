@@ -1,7 +1,6 @@
 const path = require('path');
 const { readJSONFile, writeJSONFile } = require('../utils/fileHelper');
 const { v4: uuidv4 } = require('uuid');
-const { read } = require('fs');
 
 const CONTACT_FILE = path.join(__dirname, '../data/contacts.json');
 

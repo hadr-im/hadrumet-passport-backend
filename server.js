@@ -3,6 +3,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const cron = require("node-cron");
 const { fetchAllEPs } = require("./scripts/fetchExpaUsers"); 
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./swagger.yaml');
+
 
 
 
@@ -12,6 +16,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 app.get("/", (req, res) => {
@@ -21,8 +26,12 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/contacts", require("./routes/contactRoutes"));
-//app.use("/api/ep", require("./routes/epRoutes"));
-//app.use("/api/amdin", require("./routes/adminRoutes"));
+app.use("/api/events", require("./routes/eventRoutes"));
+app.use('/api/places', require("./routes/placeRoutes"));
+app.use("/api/sendEmail", require("./routes/emailRoutes"));
+app.use("/api/realizedEps", require("./routes/realizedEpsRoutes"));
+app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/localApps', require('./routes/localAppsRoutes'));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

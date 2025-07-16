@@ -1,0 +1,22 @@
+[
+  {
+    "id": "e3a6c723-5562-4c77-ba96-68a19818b92a",
+    "name": "Kahwa Arbi",
+    "category_id": "cafes",
+    "location": "Sahloul, Sousse",
+    "description": "Coffee and board games",
+    "phone": "+21698765432",
+    "google_maps_url": "https://maps.google.com/...",
+    "picture": ""
+  },
+  {
+    "id": "b5315c21-14fe-45a9-b5fb-08d9e332a4f8",
+    "name": "Planet Food",
+    "category_id": "restaurants",
+    "location": "Sahloul, Sousse",
+    "description": "high class restaurants",
+    "phone": "+21698765432",
+    "google_maps_url": "https://maps.google.com/...",
+    "picture": ""
+  }
+]

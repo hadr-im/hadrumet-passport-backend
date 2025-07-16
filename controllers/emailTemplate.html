@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Credentials</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      background-color: #ffffff;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    h2 {
+      color: #ea7d00;
+    }
+    .content {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .credentials {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+    .credentials p {
+      margin: 5px 0;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+    }
+    a {
+      color: #ea7d00;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Hello {{name}},</h2>
+    <div class="content">
+      <p>Below are your application credentials:</p>
+
+      <div class="credentials">
+        <p>📄 <strong>Application ID:</strong> {{appID}}</p>
+        <p>🔐 <strong>Password:</strong> {{password}}</p>
+      </div>
+
+      <p>Please keep this information confidential and do not share it with anyone.</p>
+      <p>If you have any questions, feel free to contact our Information Management Department.</p>
+    </div>
+    <div class="footer">
+      &copy; 2025 AIESEC Hadrumet. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>

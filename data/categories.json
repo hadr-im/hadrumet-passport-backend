@@ -1,0 +1,6 @@
+[
+  { "id": "cafes", "label": "Cafés" },
+  { "id": "gyms", "label": "Fitness Centers" },
+  { "id": "restaurants", "label": "Restaurants" },
+  { "id": "moneyexchange", "label": "Money Exchange" }
+]

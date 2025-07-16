@@ -42,6 +42,7 @@ async function fetchPage(page) {
             end_date
           }
           opportunity {
+            title
             programme { id }
             description
             company_description
@@ -110,12 +111,14 @@ async function fetchAllEPs() {
             applicationId: app.id,
             epId: app.person.id,
             fullName: app.person.full_name,
+            title: app.person.title || '',
             email: app.person.email || '',
             role: 'EP',
             password: generatePassword(app.person.full_name, app.id),
             lc: app.person.home_lc?.name || 'Unknown',
             mc: app.person.home_mc?.name || 'Unknown',
             status: app.status,
+            realized: false,
             startDate: app.slot?.start_date || null,
             endDate: app.slot?.end_date || null,
             opportunity: {
@@ -123,6 +126,7 @@ async function fetchAllEPs() {
               description: app.opportunity?.description || '',
               company: app.opportunity?.organisation?.name || '',
               placeId: app.opportunity?.google_place_id || '',
+              location: "",
               logistics: app.opportunity?.logistics_info || {},
               salary: app.opportunity?.specifics_info?.salary || null,
               duration: app.opportunity?.opportunity_duration_type?.duration_type || null
@@ -146,7 +150,6 @@ async function fetchAllEPs() {
   
 
 }
-
 module.exports = {
   fetchAllEPs
 }
