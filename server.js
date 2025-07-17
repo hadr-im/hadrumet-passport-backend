@@ -6,6 +6,7 @@ const { fetchAllEPs } = require("./scripts/fetchExpaUsers");
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./swagger.yaml');
+const authenticateToken = require('./middleware/authmiddleware');
 
 
 
@@ -24,7 +25,11 @@ app.get("/", (req, res) => {
 });
 
 
+// Public route
 app.use("/api/auth", require("./routes/authRoutes"));
+
+// Protect all other routes
+app.use(authenticateToken);
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/events", require("./routes/eventRoutes"));
 app.use('/api/places', require("./routes/placeRoutes"));
@@ -32,6 +37,7 @@ app.use("/api/sendEmail", require("./routes/emailRoutes"));
 app.use("/api/realizedEps", require("./routes/realizedEpsRoutes"));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/localApps', require('./routes/localAppsRoutes'));
+app.use('/api/admin', require('./routes/adminRoutes'));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

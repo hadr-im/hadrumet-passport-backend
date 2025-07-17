@@ -7,10 +7,14 @@ const path = require('path');
 
 const usersFile = path.join(__dirname, '../data/users.json');
 
+// Public login route
 router.post('/login', loginEP);
 
+// All routes below require authentication
+router.use(authenticateToken);
+
 // 🔒 Route protégée
-router.get('/me', authenticateToken, async (req, res) => {
+router.get('/me', async (req, res) => {
   const users = await readJSONFile(usersFile);
   const user = users.find(u => u.applicationId === req.user.applicationId);
 
