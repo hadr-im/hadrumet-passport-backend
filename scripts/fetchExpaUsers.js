@@ -90,9 +90,17 @@ async function fetchPage(page) {
 
 async function fetchAllEPs() {
   const appSet = new Set();
-  const results = [];
+  let results = [];
   let currentPage = 1;
   let totalPages = 1;
+
+  // Load existing users to preserve their data
+  let existingUsers = [];
+  try {
+    existingUsers = await fs.readJson(USERS_FILE);
+  } catch (e) {
+    existingUsers = [];
+  }
 
   try {
     do {
@@ -107,34 +115,39 @@ async function fetchAllEPs() {
       filtered.forEach(app => {
         if (!appSet.has(app.id)) {
           appSet.add(app.id);
-
-          results.push({
-            applicationId: app.id,
-            epId: app.person.id,
-            fullName: app.person.full_name,
-            title: app.person.title || '',
-            email: app.person.email || '',
-            phone: app.person.phone || '',
-            picture: "",
-            role: 'EP',
-            password: generatePassword(app.person.full_name, app.id),
-            lc: app.person.home_lc?.name || 'Unknown',
-            mc: app.person.home_mc?.name || 'Unknown',
-            status: app.status,
-            realized: false,
-            startDate: app.slot?.start_date || null,
-            endDate: app.slot?.end_date || null,
-            opportunity: {
-              programmeId: app.opportunity?.programme?.id || null,
-              description: app.opportunity?.description || '',
-              company: app.opportunity?.organisation?.name || '',
-              placeId: app.opportunity?.google_place_id || '',
-              location: "",
-              logistics: app.opportunity?.logistics_info || {},
-              salary: app.opportunity?.specifics_info?.salary || null,
-              duration: app.opportunity?.opportunity_duration_type?.duration_type || null
-            }
-          });
+          // Check if EP already exists
+          const existing = existingUsers.find(u => u.applicationId === app.id);
+          if (existing) {
+            results.push(existing); // Keep existing data
+          } else {
+            results.push({
+              applicationId: app.id,
+              epId: app.person.id,
+              fullName: app.person.full_name,
+              title: app.person.title || '',
+              email: app.person.email || '',
+              phone: app.person.phone || '',
+              picture: "",
+              role: 'EP',
+              password: generatePassword(app.person.full_name, app.id),
+              lc: app.person.home_lc?.name || 'Unknown',
+              mc: app.person.home_mc?.name || 'Unknown',
+              status: app.status,
+              realized: false,
+              startDate: app.slot?.start_date || null,
+              endDate: app.slot?.end_date || null,
+              opportunity: {
+                programmeId: app.opportunity?.programme?.id || null,
+                description: app.opportunity?.description || '',
+                company: app.opportunity?.organisation?.name || '',
+                placeId: app.opportunity?.google_place_id || '',
+                location: "",
+                logistics: app.opportunity?.logistics_info || {},
+                salary: app.opportunity?.specifics_info?.salary || null,
+                duration: app.opportunity?.opportunity_duration_type?.duration_type || null
+              }
+            });
+          }
         }
       });
 
@@ -150,11 +163,8 @@ async function fetchAllEPs() {
   } catch (error) {
     console.error('❌ Error while fetching users from EXPA:', error.message);
   }
-  
-
 }
 fetchAllEPs();
-
 module.exports = {
   fetchAllEPs
 }
