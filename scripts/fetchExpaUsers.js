@@ -32,6 +32,7 @@ async function fetchPage(page) {
           person {
             id
             full_name
+            phone
             email
             home_lc { name }
             home_mc { name }
@@ -113,6 +114,8 @@ async function fetchAllEPs() {
             fullName: app.person.full_name,
             title: app.person.title || '',
             email: app.person.email || '',
+            phone: app.person.phone || '',
+            picture: "",
             role: 'EP',
             password: generatePassword(app.person.full_name, app.id),
             lc: app.person.home_lc?.name || 'Unknown',
@@ -150,6 +153,8 @@ async function fetchAllEPs() {
   
 
 }
+fetchAllEPs();
+
 module.exports = {
   fetchAllEPs
 }
