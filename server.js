@@ -29,6 +29,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", require("./routes/authRoutes"));
 
 // Protect all other routes
+app.use('/api/admin', require('./routes/adminRoutes'));
 app.use(authenticateToken);
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/events", require("./routes/eventRoutes"));
@@ -37,7 +38,6 @@ app.use("/api/sendEmail", require("./routes/emailRoutes"));
 app.use("/api/realizedEps", require("./routes/realizedEpsRoutes"));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/localApps', require('./routes/localAppsRoutes'));
-app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/categories', require('./routes/categoriesRoute'));
 
 app.listen(PORT, () => {
