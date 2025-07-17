@@ -38,6 +38,7 @@ app.use("/api/realizedEps", require("./routes/realizedEpsRoutes"));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/localApps', require('./routes/localAppsRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
+app.use('/api/categories', require('./routes/categoriesRoute'));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

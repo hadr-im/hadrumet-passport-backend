@@ -26,10 +26,10 @@ exports.createContact = async (req, res) => {
   const newContact = {
     id: uuidv4(),
     fullName,
+    picture,
     role,
     phone,
-    email,
-    image
+    facebookLink
   };
 
   const contacts = await readJSONFile(CONTACT_FILE);
