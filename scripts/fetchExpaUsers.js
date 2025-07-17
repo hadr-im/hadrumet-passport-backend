@@ -164,7 +164,6 @@ async function fetchAllEPs() {
     console.error('❌ Error while fetching users from EXPA:', error.message);
   }
 }
-fetchAllEPs();
 module.exports = {
   fetchAllEPs
 }
