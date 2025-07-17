@@ -8,5 +8,47 @@
     "startDate": "Sunday",
     "endDate": "Sunday",
     "picture": ""
+  },
+  {
+    "id": "b5cbd168-d117-4d62-bb0a-7ae306d4c614",
+    "title": "Cap Serat",
+    "description": "bdzadzadbdazdzadaazdaz",
+    "location": "Cap Serat",
+    "dayTime": "10AM",
+    "startDate": "Sunday",
+    "endDate": "Sunday",
+    "picture": ""
+  },
+  {
+    "id": "2cec5e96-b781-406c-b430-c9b845f7dd7f",
+    "title": "Cap Serat",
+    "type": "outing",
+    "description": "bdzadzadbdazdzadaazdaz",
+    "location": "Cap Serat",
+    "dayTime": "10AM",
+    "startDate": "Sunday",
+    "endDate": "Sunday",
+    "picture": ""
+  },
+  {
+    "id": "ae367baa-a65f-487d-8c61-681cc865df36",
+    "title": "Cap Serat",
+    "description": "bdzadzadbdazdzadaazdaz",
+    "location": "Cap Serat",
+    "dayTime": "10AM",
+    "startDate": "Sunday",
+    "endDate": "Sunday",
+    "picture": ""
+  },
+  {
+    "id": "3ec1f0a3-3953-495b-bcc6-b1e29adbf934",
+    "title": "Cap Serat",
+    "eventType": "outing",
+    "description": "bdzadzadbdazdzadaazdaz",
+    "location": "Cap Serat",
+    "dayTime": "10AM",
+    "startDate": "Sunday",
+    "endDate": "Sunday",
+    "picture": ""
   }
 ]

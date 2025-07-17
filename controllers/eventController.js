@@ -17,7 +17,7 @@ exports.getEventById = async (req, res) => {
 };
 
 exports.createEvent = async (req, res) => {
-  const { title, description, location, startDate, endDate, dayTime, picture } = req.body;
+  const { title, description, location, eventType,startDate, endDate, dayTime, picture } = req.body;
   if (!title || !location || !startDate) {
     return res.status(400).json({ message: 'title, location, and startDate are required' });
   }
@@ -25,6 +25,7 @@ exports.createEvent = async (req, res) => {
   const newEvent = {
     id: uuidv4(),
     title,
+    eventType,
     description: description || '',
     location,
     dayTime : dayTime,
@@ -32,6 +33,7 @@ exports.createEvent = async (req, res) => {
     endDate: endDate || null,
     picture: picture || '',
   };
+  console.log(newEvent);
 
   const events = await readJSONFile(EVENTS_FILE);
   events.push(newEvent);
