@@ -19,7 +19,7 @@ exports.getContactById = async (req, res) => {
 }
 
 exports.createContact = async (req, res) => {
-  const { fullName, role, phone, email, image } = req.body;
+  const { fullName, role, phone, picture, facebookLink } = req.body;
   if (!fullName || !role || !phone) {
     return res.status(400).json({ message: 'Missing required fields' });
   }

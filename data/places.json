@@ -1,22 +1,52 @@
 [
   {
-    "id": "e3a6c723-5562-4c77-ba96-68a19818b92a",
-    "name": "Kahwa Arbi",
+    "id": "4d2fe79c-7785-416e-a7c2-4920a14919ba",
+    "name": "The First Coffee",
     "category_id": "cafes",
-    "location": "Sahloul, Sousse",
-    "description": "Coffee and board games",
-    "phone": "+21698765432",
-    "google_maps_url": "https://maps.google.com/...",
-    "picture": ""
+    "location": "Zone Touristique, Sousse",
+    "description": "Café moderne avec vue sur mer et boissons artisanales.",
+    "phone": "+21673241234",
+    "google_maps_url": "https://maps.app.goo.gl/6VGVvhWL7w69e94cA",
+    "picture": "https://www.kharjet.tn/wp-content/uploads/2021/11/The-First-Coffee-Resto-3.jpg"
   },
   {
-    "id": "b5315c21-14fe-45a9-b5fb-08d9e332a4f8",
-    "name": "Planet Food",
+    "id": "0f1fb63e-5a15-4cce-8e5a-65f37ce04f03",
+    "name": "Café El Kahwa",
+    "category_id": "cafes",
+    "location": "Medina de Sousse",
+    "description": "Café traditionnel tunisien au cœur de la médina.",
+    "phone": "+21673245678",
+    "google_maps_url": "https://maps.app.goo.gl/RT8V4CG8dq1HjpiV7",
+    "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLBb659e9XF3sl3ebX77BweAFKad6K-zRbOg&s"
+  },
+  {
+    "id": "e13269aa-04a9-4c2d-aea5-d02bc2bad763",
+    "name": "Escargot Restaurant",
     "category_id": "restaurants",
     "location": "Sahloul, Sousse",
-    "description": "high class restaurants",
-    "phone": "+21698765432",
-    "google_maps_url": "https://maps.google.com/...",
-    "picture": ""
+    "description": "Restaurant chic avec une belle carte de fruits de mer.",
+    "phone": "+21673233222",
+    "google_maps_url": "https://maps.app.goo.gl/spKjjkhUmfpYmi4w7",
+    "picture": "https://media-cdn.tripadvisor.com/media/photo-s/0e/75/e0/6b/la-premiere-salle-a-l.jpg"
+  },
+  {
+    "id": "46292535-ef8c-4f75-9789-d66dda48342e",
+    "name": "La Plage",
+    "category_id": "restaurants",
+    "location": "Corniche de Sousse",
+    "description": "Restaurant en bord de mer avec spécialités grillées.",
+    "phone": "+21673239876",
+    "google_maps_url": "https://maps.app.goo.gl/VAZtaPtJdVr9iwgZA",
+    "picture": "https://www.marhba.com/images/lifestyle2021/sousse-resto-mer_3.jpg"
+  },
+  {
+    "id": "41aba76c-6d50-4fc0-99ac-a1eb22fd60c0",
+    "name": "Power Gym Sousse",
+    "category_id": "gyms",
+    "location": "Khzema Est, Sousse",
+    "description": "Salle de sport moderne avec coaching personnalisé.",
+    "phone": "+21673236789",
+    "google_maps_url": "https://maps.app.goo.gl/NsyAdWkTQu2y7Qka7",
+    "picture": "https://www.jawharafm.net/fr/content/upload/1602348988.jpg"
   }
 ]
